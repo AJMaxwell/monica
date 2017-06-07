@@ -111,6 +111,7 @@ class RegisterController extends Controller
      */
     public function redirectToProvider()
     {
+		dd(Socialite::driver('facebook')->redirect());
         return Socialite::driver('facebook')->redirect();
     }
 
