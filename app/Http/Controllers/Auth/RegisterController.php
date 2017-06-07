@@ -41,6 +41,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
+		return view('errors.404');
         $this->middleware('guest');
     }
 
@@ -51,7 +52,6 @@ class RegisterController extends Controller
      */
     public function showRegistrationForm()
     {
-		return view('errors.404');
         if (env('APP_DISABLE_SIGNUP') == 'true') {
             abort(403, trans('auth.signup_disabled'));
         }
