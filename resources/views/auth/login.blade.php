@@ -38,9 +38,9 @@
               <div class="form-group links">
                 <ul>
                   <li>Forget your password? <a href="/password/reset">Reset your password</a></li>
-                  @if(env('APP_DISABLE_SIGNUP') != 'true')
+                  <?php /*@if(env('APP_DISABLE_SIGNUP') != 'true')
                     <li>Don't have an account? <a href="/register">Sign up</a></li>
-                  @endif
+                  @endif*/ ?>
                 </ul>
               </div>
 

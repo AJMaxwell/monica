@@ -51,6 +51,7 @@ class RegisterController extends Controller
      */
     public function showRegistrationForm()
     {
+		return view('errors.404');
         if (env('APP_DISABLE_SIGNUP') == 'true') {
             abort(403, trans('auth.signup_disabled'));
         }
@@ -111,7 +112,6 @@ class RegisterController extends Controller
      */
     public function redirectToProvider()
     {
-		dd(Socialite::driver('facebook')->redirect());
         return Socialite::driver('facebook')->redirect();
     }
 
