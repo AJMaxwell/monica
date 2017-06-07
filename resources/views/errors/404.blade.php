@@ -8,7 +8,7 @@
 			<div class="col-xs-12 col-md-6 col-md-offset-3">
 
 				<div class="alert alert-danger">
-					<h3><i class="fa fa-ban"></i> Uh oh! We can't find what you're looking for.</h3>
+					<h3><span class="fa fa-frown-o"></span> Uh oh! We can't find what you're looking for.</h3>
 				</div>
 
 			</div>
