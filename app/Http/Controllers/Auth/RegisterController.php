@@ -41,9 +41,13 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-		return view('errors.404');
         $this->middleware('guest');
     }
+
+	public function ret404()
+	{
+		return view('errors.404');
+	}
 
     /**
      * Show the application registration form.
@@ -52,6 +56,7 @@ class RegisterController extends Controller
      */
     public function showRegistrationForm()
     {
+		return $this->ret404();
         if (env('APP_DISABLE_SIGNUP') == 'true') {
             abort(403, trans('auth.signup_disabled'));
         }
@@ -67,6 +72,7 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+		return $this->ret404();
         return Validator::make($data, [
             'last_name' => 'required|max:255',
             'first_name' => 'required|max:255',
@@ -83,6 +89,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+		return $this->ret404();
         $user = new User;
         $user->first_name = $data['first_name'];
         $user->last_name = $data['last_name'];
@@ -112,6 +119,7 @@ class RegisterController extends Controller
      */
     public function redirectToProvider()
     {
+		return $this->ret404();
         return Socialite::driver('facebook')->redirect();
     }
 
@@ -122,6 +130,7 @@ class RegisterController extends Controller
      */
     public function handleProviderCallback()
     {
+		return $this->ret404();
         $user = Socialite::driver('facebook')->user();
 
         // Is there a user already registered?
